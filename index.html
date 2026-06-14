@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poker Decision Helper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-box">
+        <div class="chip-logo">♠</div>
+        <div>
+          <h1>Poker<br />Decision Helper</h1>
+          <p>상황 기반 포커 액션 추천 사이트</p>
+        </div>
+      </div>
+
+      <section class="info-card">
+        <div class="section-title">
+          <span>01</span>
+          <h2>족보 순위</h2>
+        </div>
+        <ol class="ranking-list hand-rankings">
+          <li><span class="mini-hand royal">A K Q J 10</span><b>로열 플러시</b></li>
+          <li><span class="mini-hand straight-flush">9 8 7 6 5</span><b>스트레이트 플러시</b></li>
+          <li><span class="mini-hand quad">A A A A</span><b>포카드</b></li>
+          <li><span class="mini-hand full-house">K K K 9 9</span><b>풀하우스</b></li>
+          <li><span class="mini-hand flush">♣ ♣ ♣ ♣ ♣</span><b>플러시</b></li>
+          <li><span class="mini-hand straight">10 9 8 7 6</span><b>스트레이트</b></li>
+          <li><span class="mini-hand trips">Q Q Q</span><b>트리플</b></li>
+          <li><span class="mini-hand two-pair">J J 8 8</span><b>투페어</b></li>
+          <li><span class="mini-hand pair">10 10</span><b>원페어</b></li>
+          <li><span class="mini-hand high-card">A</span><b>하이카드</b></li>
+        </ol>
+      </section>
+
+      <section class="info-card">
+        <div class="section-title">
+          <span>02</span>
+          <h2>핸드 순위 TOP 5</h2>
+        </div>
+        <div class="top-hands">
+          <article>
+            <div class="cards"><span class="card red">A♥</span><span class="card black">A♠</span></div>
+            <p><b>AA</b> · 가장 강한 프리플랍 핸드</p>
+          </article>
+          <article>
+            <div class="cards"><span class="card red">K♦</span><span class="card black">K♣</span></div>
+            <p><b>KK</b> · 대부분 상황에서 강한 레이즈</p>
+          </article>
+          <article>
+            <div class="cards"><span class="card red">Q♥</span><span class="card black">Q♣</span></div>
+            <p><b>QQ</b> · 강하지만 A/K 보드 주의</p>
+          </article>
+          <article>
+            <div class="cards"><span class="card red">A♥</span><span class="card red">K♥</span></div>
+            <p><b>AKs</b> · 플러시/스트레이트 가능성 높음</p>
+          </article>
+          <article>
+            <div class="cards"><span class="card black">J♠</span><span class="card red">J♦</span></div>
+            <p><b>JJ</b> · 강한 페어지만 오버카드 주의</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="info-card note">
+        <h2>발표용 설명</h2>
+        <p>
+          이 사이트는 GTO 솔버가 아니라, 입력된 상황을 바탕으로
+          <b>핸드 강도, 팟 오즈, 스택 대비 팟 비율</b>을 단순 계산해
+          의사결정 방향을 제안하는 교육용 도구입니다.
+        </p>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Texas Hold'em Strategy Tool</p>
+          <h2>내 핸드와 상황을 입력하면<br />추천 액션을 보여줍니다.</h2>
+          <p>
+            프리플랍부터 리버까지 현재 상황을 선택하고, 상대의 액션과 팟 사이즈를 입력해
+            Fold / Check / Call / Bet / Raise / All-in 중 하나를 추천받을 수 있습니다.
+          </p>
+        </div>
+        <div class="table-visual" aria-hidden="true">
+          <div class="felt">
+            <div class="pot">POT</div>
+            <span class="table-card">A♠</span>
+            <span class="table-card red">K♥</span>
+            <span class="table-card">Q♣</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-grid">
+        <form id="pokerForm" class="input-panel">
+          <h3>상황 입력</h3>
+
+          <div class="form-row two-columns">
+            <label>
+              첫 번째 카드
+              <div class="select-row">
+                <select id="rank1" required>
+                  <option value="A">A</option>
+                  <option value="K">K</option>
+                  <option value="Q">Q</option>
+                  <option value="J">J</option>
+                  <option value="T">10</option>
+                  <option value="9">9</option>
+                  <option value="8">8</option>
+                  <option value="7">7</option>
+                  <option value="6">6</option>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                </select>
+                <select id="suit1" required>
+                  <option value="spades">♠</option>
+                  <option value="hearts">♥</option>
+                  <option value="diamonds">♦</option>
+                  <option value="clubs">♣</option>
+                </select>
+              </div>
+            </label>
+
+            <label>
+              두 번째 카드
+              <div class="select-row">
+                <select id="rank2" required>
+                  <option value="A">A</option>
+                  <option value="K">K</option>
+                  <option value="Q">Q</option>
+                  <option value="J">J</option>
+                  <option value="T">10</option>
+                  <option value="9">9</option>
+                  <option value="8">8</option>
+                  <option value="7">7</option>
+                  <option value="6">6</option>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                </select>
+                <select id="suit2" required>
+                  <option value="hearts">♥</option>
+                  <option value="spades">♠</option>
+                  <option value="diamonds">♦</option>
+                  <option value="clubs">♣</option>
+                </select>
+              </div>
+            </label>
+          </div>
+
+          <div class="form-row two-columns">
+            <label>
+              내 스택
+              <input id="stack" type="number" min="1" placeholder="예: 100000" required />
+            </label>
+            <label>
+              현재 팟 사이즈
+              <input id="pot" type="number" min="1" placeholder="예: 25000" required />
+            </label>
+          </div>
+
+          <div class="form-row two-columns">
+            <label>
+              현재 상황
+              <select id="street" required>
+                <option value="preflop">프리플랍</option>
+                <option value="flop">플랍</option>
+                <option value="turn">턴</option>
+                <option value="river">리버</option>
+              </select>
+            </label>
+            <label>
+              상대 액션
+              <select id="opponentAction" required>
+                <option value="check">체크</option>
+                <option value="call">콜</option>
+                <option value="bet">베팅</option>
+                <option value="raise">레이즈</option>
+                <option value="allin">올인</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              상대 베팅/레이즈 금액 <small>체크 상황이면 0으로 둬도 됩니다</small>
+              <input id="betSize" type="number" min="0" placeholder="예: 15000" value="0" />
+            </label>
+          </div>
+
+          <button type="submit" class="primary-btn">추천 액션 확인</button>
+        </form>
+
+        <section class="result-panel" id="resultPanel">
+          <h3>추천 결과</h3>
+          <div class="empty-state" id="emptyState">
+            <div class="big-card">?</div>
+            <p>왼쪽에 정보를 입력하면 추천 액션이 표시됩니다.</p>
+          </div>
+
+          <div class="result-content hidden" id="resultContent">
+            <div class="action-badge" id="actionBadge">Raise</div>
+            <h4 id="resultTitle">추천 액션</h4>
+            <p id="resultReason"></p>
+
+            <div class="stats-grid">
+              <div>
+                <span>핸드 강도</span>
+                <strong id="handScore">0</strong>
+              </div>
+              <div>
+                <span>SPR</span>
+                <strong id="sprValue">0</strong>
+              </div>
+              <div>
+                <span>팟 오즈</span>
+                <strong id="potOdds">-</strong>
+              </div>
+              <div>
+                <span>위험도</span>
+                <strong id="riskLevel">중간</strong>
+              </div>
+            </div>
+
+            <div class="comment-box" id="commentBox"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
