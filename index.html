@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,65 +13,56 @@
         <div class="chip-logo">♠</div>
         <div>
           <h1>Poker<br />Decision Helper</h1>
-          <p>상황 기반 포커 액션 추천 사이트</p>
+          <p>A situation-based poker action guide</p>
         </div>
       </div>
 
       <section class="info-card">
         <div class="section-title">
           <span>01</span>
-          <h2>족보 순위</h2>
+          <h2>Poker Hand Rankings</h2>
         </div>
         <ol class="ranking-list hand-rankings">
-          <li><span class="mini-hand royal">A K Q J 10</span><b>로열 플러시</b></li>
-          <li><span class="mini-hand straight-flush">9 8 7 6 5</span><b>스트레이트 플러시</b></li>
-          <li><span class="mini-hand quad">A A A A</span><b>포카드</b></li>
-          <li><span class="mini-hand full-house">K K K 9 9</span><b>풀하우스</b></li>
-          <li><span class="mini-hand flush">♣ ♣ ♣ ♣ ♣</span><b>플러시</b></li>
-          <li><span class="mini-hand straight">10 9 8 7 6</span><b>스트레이트</b></li>
-          <li><span class="mini-hand trips">Q Q Q</span><b>트리플</b></li>
-          <li><span class="mini-hand two-pair">J J 8 8</span><b>투페어</b></li>
-          <li><span class="mini-hand pair">10 10</span><b>원페어</b></li>
-          <li><span class="mini-hand high-card">A</span><b>하이카드</b></li>
+          <li><span class="mini-hand royal">A K Q J 10</span><b>Royal Flush</b></li>
+          <li><span class="mini-hand straight-flush">9 8 7 6 5</span><b>Straight Flush</b></li>
+          <li><span class="mini-hand quad">A A A A</span><b>Four of a Kind</b></li>
+          <li><span class="mini-hand full-house">K K K 9 9</span><b>Full House</b></li>
+          <li><span class="mini-hand flush">♣ ♣ ♣ ♣ ♣</span><b>Flush</b></li>
+          <li><span class="mini-hand straight">10 9 8 7 6</span><b>Straight</b></li>
+          <li><span class="mini-hand trips">Q Q Q</span><b>Three of a Kind</b></li>
+          <li><span class="mini-hand two-pair">J J 8 8</span><b>Two Pair</b></li>
+          <li><span class="mini-hand pair">10 10</span><b>One Pair</b></li>
+          <li><span class="mini-hand high-card">A</span><b>High Card</b></li>
         </ol>
       </section>
 
       <section class="info-card">
         <div class="section-title">
           <span>02</span>
-          <h2>핸드 순위 TOP 5</h2>
+          <h2>Top 5 Starting Hands</h2>
         </div>
         <div class="top-hands">
           <article>
             <div class="cards"><span class="card red">A♥</span><span class="card black">A♠</span></div>
-            <p><b>AA</b> · 가장 강한 프리플랍 핸드</p>
+            <p><b>AA</b> · The strongest pre-flop hand</p>
           </article>
           <article>
             <div class="cards"><span class="card red">K♦</span><span class="card black">K♣</span></div>
-            <p><b>KK</b> · 대부분 상황에서 강한 레이즈</p>
+            <p><b>KK</b> · Strong raise in most situations</p>
           </article>
           <article>
             <div class="cards"><span class="card red">Q♥</span><span class="card black">Q♣</span></div>
-            <p><b>QQ</b> · 강하지만 A/K 보드 주의</p>
+            <p><b>QQ</b> · Strong, but watch out for A/K boards</p>
           </article>
           <article>
             <div class="cards"><span class="card red">A♥</span><span class="card red">K♥</span></div>
-            <p><b>AKs</b> · 플러시/스트레이트 가능성 높음</p>
+            <p><b>AKs</b> · High flush and straight potential</p>
           </article>
           <article>
             <div class="cards"><span class="card black">J♠</span><span class="card red">J♦</span></div>
-            <p><b>JJ</b> · 강한 페어지만 오버카드 주의</p>
+            <p><b>JJ</b> · Strong pair, but vulnerable to overcards</p>
           </article>
         </div>
-      </section>
-
-      <section class="info-card note">
-        <h2>발표용 설명</h2>
-        <p>
-          이 사이트는 GTO 솔버가 아니라, 입력된 상황을 바탕으로
-          <b>핸드 강도, 팟 오즈, 스택 대비 팟 비율</b>을 단순 계산해
-          의사결정 방향을 제안하는 교육용 도구입니다.
-        </p>
       </section>
     </aside>
 
@@ -79,10 +70,10 @@
       <section class="hero">
         <div>
           <p class="eyebrow">Texas Hold'em Strategy Tool</p>
-          <h2>내 핸드와 상황을 입력하면<br />추천 액션을 보여줍니다.</h2>
+          <h2>Enter your hand and situation.<br />Get a recommended action.</h2>
           <p>
-            프리플랍부터 리버까지 현재 상황을 선택하고, 상대의 액션과 팟 사이즈를 입력해
-            Fold / Check / Call / Bet / Raise / All-in 중 하나를 추천받을 수 있습니다.
+            Choose the current street from pre-flop to river, enter the opponent's action,
+            stack size, and pot size, then receive a suggested action: Fold / Check / Call / Bet / Raise / All-in.
           </p>
         </div>
         <div class="table-visual" aria-hidden="true">
@@ -97,11 +88,11 @@
 
       <section class="tool-grid">
         <form id="pokerForm" class="input-panel">
-          <h3>상황 입력</h3>
+          <h3>Enter Situation</h3>
 
           <div class="form-row two-columns">
             <label>
-              첫 번째 카드
+              First Card
               <div class="select-row">
                 <select id="rank1" required>
                   <option value="A">A</option>
@@ -128,7 +119,7 @@
             </label>
 
             <label>
-              두 번째 카드
+              Second Card
               <div class="select-row">
                 <select id="rank2" required>
                   <option value="A">A</option>
@@ -157,62 +148,62 @@
 
           <div class="form-row two-columns">
             <label>
-              내 스택
-              <input id="stack" type="number" min="1" placeholder="예: 100000" required />
+              My Stack
+              <input id="stack" type="number" min="1" placeholder="Example: 100000" required />
             </label>
             <label>
-              현재 팟 사이즈
-              <input id="pot" type="number" min="1" placeholder="예: 25000" required />
+              Current Pot Size
+              <input id="pot" type="number" min="1" placeholder="Example: 25000" required />
             </label>
           </div>
 
           <div class="form-row two-columns">
             <label>
-              현재 상황
+              Current Street
               <select id="street" required>
-                <option value="preflop">프리플랍</option>
-                <option value="flop">플랍</option>
-                <option value="turn">턴</option>
-                <option value="river">리버</option>
+                <option value="preflop">Pre-flop</option>
+                <option value="flop">Flop</option>
+                <option value="turn">Turn</option>
+                <option value="river">River</option>
               </select>
             </label>
             <label>
-              상대 액션
+              Opponent Action
               <select id="opponentAction" required>
-                <option value="check">체크</option>
-                <option value="call">콜</option>
-                <option value="bet">베팅</option>
-                <option value="raise">레이즈</option>
-                <option value="allin">올인</option>
+                <option value="check">Check</option>
+                <option value="call">Call</option>
+                <option value="bet">Bet</option>
+                <option value="raise">Raise</option>
+                <option value="allin">All-in</option>
               </select>
             </label>
           </div>
 
           <div class="form-row">
             <label>
-              상대 베팅/레이즈 금액 <small>체크 상황이면 0으로 둬도 됩니다</small>
-              <input id="betSize" type="number" min="0" placeholder="예: 15000" value="0" />
+              Opponent Bet / Raise Size <small>If the opponent checks, you can leave this as 0.</small>
+              <input id="betSize" type="number" min="0" placeholder="Example: 15000" value="0" />
             </label>
           </div>
 
-          <button type="submit" class="primary-btn">추천 액션 확인</button>
+          <button type="submit" class="primary-btn">Show Recommended Action</button>
         </form>
 
         <section class="result-panel" id="resultPanel">
-          <h3>추천 결과</h3>
+          <h3>Recommendation Result</h3>
           <div class="empty-state" id="emptyState">
             <div class="big-card">?</div>
-            <p>왼쪽에 정보를 입력하면 추천 액션이 표시됩니다.</p>
+            <p>Enter your information on the left to see the recommended action.</p>
           </div>
 
           <div class="result-content hidden" id="resultContent">
             <div class="action-badge" id="actionBadge">Raise</div>
-            <h4 id="resultTitle">추천 액션</h4>
+            <h4 id="resultTitle">Recommended Action</h4>
             <p id="resultReason"></p>
 
             <div class="stats-grid">
               <div>
-                <span>핸드 강도</span>
+                <span>Hand Strength</span>
                 <strong id="handScore">0</strong>
               </div>
               <div>
@@ -220,12 +211,12 @@
                 <strong id="sprValue">0</strong>
               </div>
               <div>
-                <span>팟 오즈</span>
+                <span>Pot Odds</span>
                 <strong id="potOdds">-</strong>
               </div>
               <div>
-                <span>위험도</span>
-                <strong id="riskLevel">중간</strong>
+                <span>Risk Level</span>
+                <strong id="riskLevel">Medium</strong>
               </div>
             </div>
 
